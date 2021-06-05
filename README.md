@@ -2,22 +2,28 @@
 
 String encrypr and decryptr 
 
+# For Installation
+
+`npm i string_encryptr`
+
 ```
 first import like this
 
 const { encrypt, decrypt } = require('string_encryptr')
 
-for encryption 
-------------------------
+```
+
+# For Encryption 
+```
 
 encrypt('test')
     .then(data =>console.log(data))
     .catch(err => console.log(err))
 
+```
+# For Decryption
 
-for decryption
-----------------------------
-
+```
 decrypt('CvrCscRdqDrrCs')
     .then(data =>console.log(data))
     .catch(err => console.log(err))
