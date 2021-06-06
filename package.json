@@ -1,28 +1,28 @@
 {
-  "name": "string_encryptr",
-  "version": "1.0.0",
-  "description": "String encrypr and decryptr",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "string",
-    "encrypt",
-    "decrypt",
-    "token",
-    "generate",
-    "encode",
-    "decode"
-  ],
-  "author": "anish gupta",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anishkg91/nodeencryptr.git"
-  },
-  "bugs": {
-    "url": "https://github.com/anishkg91/nodeencryptr/issues"
-  },
-  "homepage": "https://github.com/anishkg91/nodeencryptr#readme"
+    "name": "@anishg/string_encryptr",
+    "version": "1.0.1",
+    "description": "String encrypr and decryptr",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "string",
+        "encrypt",
+        "decrypt",
+        "token",
+        "generate",
+        "encode",
+        "decode"
+    ],
+    "author": "anish gupta",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/anishkg91/nodeencryptr.git"
+    },
+    "bugs": {
+        "url": "https://github.com/anishkg91/nodeencryptr/issues"
+    },
+    "homepage": "https://github.com/anishkg91/nodeencryptr#readme"
 }

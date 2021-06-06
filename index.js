@@ -1,35 +1,54 @@
 const { exec } = require('child_process')
 
-let encrypt = (value) => {
-    return new Promise((resolve, reject) => {
-        if (!value)
-            reject({ err: "data empty" })
-        else {
-            exec(`./test encrypt ${value.trim()}`, (err, out, stderr) => {
-                if (err)
-                    reject({ err: stderr })
-                else {
-                    console.log("output", out);
-                    resolve({ data: out })
-                }
-            })
-        }
-    })
+
+class Encryptr {
+
+    constructor(pass) {
+        this.password = pass
+
+    }
+
+    encrypt(value) {
+
+        return new Promise((resolve, reject) => {
+            if (!value)
+                reject({ err: "data empty" })
+            else if (!this.password)
+                reject({ err: "password not found" })
+            else if (this.password.match(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/))
+                reject({ err: "special characters not allowed in password" })
+
+            else {
+                exec(`./.engin encrypt ${value.trim()} ${this.password}`, (err, out, stderr) => {
+                    if (err)
+                        reject({ err: stderr })
+                    else {
+                        console.log("output", out);
+                        resolve({ data: out })
+                    }
+                })
+            }
+        })
+    }
+
+    decrypt(value) {
+        return new Promise((resolve, reject) => {
+            if (!value)
+                reject({ err: "data empty" })
+            else if (!this.password)
+                reject({ err: "password not found" })
+            else if (this.password.match(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/))
+                reject({ err: "special characters not allowed in password" })
+            else {
+                exec(`./.engin decrypt ${value.trim()} ${this.password}`, (err, out, stderr) => {
+                    if (err)
+                        reject({ err: stderr })
+                    else
+                        resolve({ data: out })
+                })
+            }
+        })
+    }
 }
 
-let decrypt = (value) => {
-    return new Promise((resolve, reject) => {
-        if (!value)
-            reject({ err: "data empty" })
-        else {
-            exec(`./test decrypt ${value.trim()}`, (err, out, stderr) => {
-                if (err)
-                    reject({ err: stderr })
-                else
-                    resolve({ data: out })
-            })
-        }
-    })
-}
-
-module.exports = { encrypt, decrypt }
+module.exports = Encryptr

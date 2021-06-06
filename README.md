@@ -9,14 +9,18 @@ String encrypr and decryptr
 ```
 first import like this
 
-const { encrypt, decrypt } = require('string_encryptr')
+const encryptr = require('string_encryptr')
+
+let password = "pass"  // password
+
+const Helper = new encryptr(password) 
 
 ```
 
 # For Encryption 
 ```
 
-encrypt('test')
+Helper.encrypt('test')
     .then(data =>console.log(data))
     .catch(err => console.log(err))
 
@@ -24,7 +28,7 @@ encrypt('test')
 # For Decryption
 
 ```
-decrypt('CvrCscRdqDrrCs')
+Helper.decrypt('CvrCscRdqDrrCs')
     .then(data =>console.log(data))
     .catch(err => console.log(err))
 
