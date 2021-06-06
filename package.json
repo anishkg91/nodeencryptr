@@ -1,6 +1,6 @@
 {
     "name": "@anishg/string_encryptr",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "description": "String encrypr and decryptr",
     "main": "index.js",
     "scripts": {
