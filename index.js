@@ -19,7 +19,7 @@ class Encryptr {
                 reject({ err: "special characters not allowed in password" })
 
             else {
-                exec(`./engin encrypt ${value.trim()} ${this.password}`, (err, out, stderr) => {
+                exec(`./node_modules/@anishg/string_encryptr/test encrypt ${value.trim()} ${this.password}`, (err, out, stderr) => {
                     if (err)
                         reject({ err: stderr })
                     else {
@@ -40,7 +40,7 @@ class Encryptr {
             else if (this.password.match(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/))
                 reject({ err: "special characters not allowed in password" })
             else {
-                exec(`./engin decrypt ${value.trim()} ${this.password}`, (err, out, stderr) => {
+                exec(`./node_modules/@anishg/string_encryptr/test decrypt ${value.trim()} ${this.password}`, (err, out, stderr) => {
                     if (err)
                         reject({ err: stderr })
                     else

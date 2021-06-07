@@ -4,12 +4,12 @@ String encrypr and decryptr
 
 # For Installation
 
-`npm i string_encryptr`
+`npm i @anishg/string_encryptr`
 
 ```
 first import like this
 
-const encryptr = require('string_encryptr')
+const encryptr = require('@anishg/string_encryptr')
 
 let password = "pass"  // password
 
